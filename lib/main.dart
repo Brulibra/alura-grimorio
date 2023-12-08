@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:grimorio/dashboard.dart';
+import 'package:grimorio/views/dashboard.dart';
 
 void main() {
   runApp(const Grimorio());

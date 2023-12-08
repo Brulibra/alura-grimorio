@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:grimorio/display_text.dart';
-import 'package:grimorio/primary_button.dart';
+import 'package:grimorio/views/components/display_text.dart';
+import 'package:grimorio/views/components/primary_button.dart';
 import 'package:grimorio/theme.dart';
 
 class Signup extends StatefulWidget {

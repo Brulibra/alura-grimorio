@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:grimorio/display_text.dart';
-import 'package:grimorio/entry.dart';
-import 'package:grimorio/primary_button.dart';
-import 'package:grimorio/new_entry.dart';
-import 'package:grimorio/google_book_service.dart';
+import 'package:grimorio/views/components/display_text.dart';
+import 'package:grimorio/views/components/entry.dart';
+import 'package:grimorio/views/components/primary_button.dart';
+import 'package:grimorio/views/new_entry.dart';
+import 'package:grimorio/services/google_book_service.dart';
 import 'package:grimorio/theme.dart';
 
 class SearchBooks extends StatefulWidget {
