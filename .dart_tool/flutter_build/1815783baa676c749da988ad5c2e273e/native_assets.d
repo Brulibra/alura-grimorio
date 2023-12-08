@@ -1,0 +1,1 @@
+ /Users/bruli/Documents/Projetos/alura-grimorio/.dart_tool/flutter_build/1815783baa676c749da988ad5c2e273e/native_assets.yaml: 
