@@ -1,4 +1,4 @@
-![Mobile-Flutter com Arquitetura: MVC](capa.png)
+![Mobile-Flutter com Arquitetura: MVC](assets/capa.png)
 
 # Flutter com Arquitetura: MVC
 
@@ -28,7 +28,7 @@ Este curso é indicado para pessoas que já tem conhecimento intermediário e qu
 - Editar uma entrada;
 
 <p align="center">
-  <img src="projeto.gif" alt= "GIF da aplicação desenvolvida." />
+  <img src="assets/projeto.gif" alt= "GIF da aplicação desenvolvida." />
 </p> 
 
 ## 🛠️ Abrir e rodar o projeto
