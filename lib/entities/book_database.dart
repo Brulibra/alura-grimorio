@@ -3,8 +3,7 @@
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
-import '../services/google_book_service.dart';
-
+import '../models/personal_book.dart';
 
 class PersonalBookDatabase {
   static const String _tableName = "bookTable";
@@ -13,9 +12,9 @@ class PersonalBookDatabase {
   static const String _dayFinished = "dayFinished";
   static const String _comments = "comments";
   static const String _googleBook = "googleBook";
- 
+
   static const String createTableSQL =
-      // ignore: prefer_adjacent_string_concatenation, prefer_interpolation_to_compose_strings
+      // ignore: prefer_interpolation_to_compose_strings, prefer_adjacent_string_concatenation
       "CREATE TABLE $_tableName($_id INTEGER NOT NULL PRIMARY KEY," +
           "$_dayStarted TEXT," +
           "$_dayFinished TEXT," +
@@ -108,20 +107,5 @@ class PersonalBookDatabase {
     return listPost;
   }
 }
-
 class PersonalBookNotFindException implements Exception {}
 
-// These below are just examples. Need to create new models
-class PersonalBook {
-  int id = 0;
-  GoogleBook googleBook = GoogleBook(authors: "a", description: "b", id: "c", thumbnailLink: "d", title: "e");
-
-  PersonalBook.fromMap(Map<String, dynamic> map){
-    id = map["id"];
-    googleBook = map["googleBook"];
-  }
-
-  Map<String, dynamic> toMap() {
-    return {"id": id, "googleBook": googleBook};
-  }
-}
