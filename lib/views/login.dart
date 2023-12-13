@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:grimorio/views/components/display_text.dart';
-import 'package:grimorio/views/home.dart';
-import 'package:grimorio/views/components/primary_button.dart';
-import 'package:grimorio/views/sign_up.dart';
-import 'package:grimorio/theme.dart';
+import 'components/display_text.dart';
+import 'home.dart';
+import 'components/primary_button.dart';
+import 'sign_up.dart';
+import '../theme.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -22,6 +22,7 @@ class _LoginState extends State<Login> {
       child: Container(
         decoration: AppBackgroundProperties.boxDecoration,
         child: Scaffold(
+          appBar: AppBar(backgroundColor: AppColors.black,),
           backgroundColor: Colors.transparent,
           body: Center(
             child: SingleChildScrollView(

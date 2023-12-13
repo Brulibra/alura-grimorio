@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:grimorio/views/login.dart';
-import 'package:grimorio/views/components/primary_button.dart';
-import 'package:grimorio/theme.dart';
+
+import 'components/primary_button.dart';
+import 'login.dart';
+import '../theme.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});

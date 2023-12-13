@@ -27,8 +27,9 @@ class _HomeState extends State<Home> {
         child: Container(
       decoration: AppBackgroundProperties.boxDecoration,
       child: Scaffold(
+        appBar: AppBar(backgroundColor: AppColors.black),
         backgroundColor: Colors.transparent,
-        body: Center(
+        body: const Center(
           child: _EmptyHome(),
           // Need connection with sqflite
           // child: FutureBuilder(

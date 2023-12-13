@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:grimorio/theme.dart';
+import '../../theme.dart';
 
 class SecondaryButton extends StatelessWidget {
   const SecondaryButton({super.key, required this.text, this.icon, required this.onTap});

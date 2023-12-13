@@ -59,8 +59,8 @@ class _BookDetailsState extends State<BookDetails> {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 24.0),
+                  const Padding(
+                    padding: EdgeInsets.only(bottom: 24.0),
                     child: Row(
                       children: [
                         Expanded(
@@ -91,12 +91,12 @@ class _BookDetailsState extends State<BookDetails> {
                       ],
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 8.0),
+                  const Padding(
+                    padding: EdgeInsets.only(bottom: 8.0),
                     child: Row(children: <Widget>[
                       Text(
                         "Day started",
-                        style: const TextStyle(
+                        style: TextStyle(
                             fontSize: 16, fontWeight: FontWeight.w600),
                       )
                     ]),
@@ -119,12 +119,12 @@ class _BookDetailsState extends State<BookDetails> {
                       ],
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 16.0),
+                  const Padding(
+                    padding: EdgeInsets.only(bottom: 16.0),
                     child: Row(children: <Widget>[
                       Text(
                         "Day Finished",
-                        style: const TextStyle(
+                        style: TextStyle(
                             fontSize: 16, fontWeight: FontWeight.w600),
                       )
                     ]),
@@ -140,8 +140,8 @@ class _BookDetailsState extends State<BookDetails> {
                       ],
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 32.0),
+                  const Padding(
+                    padding: EdgeInsets.only(bottom: 32.0),
                     child: Row(
                       children: [
                         Expanded(child: Text("Book Comments")),

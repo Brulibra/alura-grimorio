@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:grimorio/views/components/date_input.dart';
 
 import '../../theme.dart';
 import 'components/display_text.dart';
+import 'components/date_input.dart';
 import 'components/entry.dart';
 import 'components/primary_button.dart';
 

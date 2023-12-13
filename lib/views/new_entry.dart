@@ -42,8 +42,8 @@ class _NewEntryState extends State<NewEntry> {
                   child: Column(
                     children: <Widget>[
                       // Entry(book: "Book"),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 24.0),
+                      const Padding(
+                        padding: EdgeInsets.only(bottom: 24.0),
                         child: Text("Book Description"),
                       ),
                       Form(
