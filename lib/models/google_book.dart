@@ -23,7 +23,7 @@ class GoogleBook {
 
   validateTitle(Map<String, dynamic> map) => map["volumeInfo"]["title"] ?? "Título não identificado";
   
-  validateAuthor(Map<String, dynamic> map) => (map["volumeInfo"]["authors"] as List<dynamic>).map((e) => e).toString() == null ? "Autor não identificado" : map["volumeInfo"]["authors"];
+  validateAuthor(Map<String, dynamic> map) => map["volumeInfo"]["authors"] == null ? "Autor não identificado" : (map["volumeInfo"]["authors"] as List<dynamic>).map((e) => e).toString();
 
   validateDescription(Map<String, dynamic> map) => map["volumeInfo"]["description"] ?? "Sem Descrição";
 
