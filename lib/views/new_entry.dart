@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../controller/book_controller.dart';
 import '../models/google_book.dart';
 import 'components/date_input.dart';
 import 'components/display_text.dart';
@@ -9,7 +10,12 @@ import '../../theme.dart';
 import 'home.dart';
 
 class NewEntry extends StatefulWidget {
-  const NewEntry({super.key, required GoogleBook googleBook,});
+  NewEntry({
+    super.key,
+    required GoogleBook googleBook,
+  });
+
+  late GoogleBook googleBook;
 
   @override
   State<NewEntry> createState() => _NewEntryState();
@@ -20,6 +26,8 @@ class _NewEntryState extends State<NewEntry> {
   final TextEditingController initialDateController = TextEditingController();
   final TextEditingController finalDateController = TextEditingController();
   final TextEditingController commentsController = TextEditingController();
+
+  final BookController bookController = BookController();
 
   @override
   Widget build(BuildContext context) {
@@ -80,8 +88,11 @@ class _NewEntryState extends State<NewEntry> {
                               child: PrimaryButton(
                                   text: "Adicionar",
                                   onTap: () {
-                                    // Needs add book logic
-
+                                    bookController.addBook(
+                                        widget.googleBook,
+                                        initialDateController.text,
+                                        finalDateController.text,
+                                        commentsController.text);
                                     Navigator.pushAndRemoveUntil(
                                       context,
                                       MaterialPageRoute(
