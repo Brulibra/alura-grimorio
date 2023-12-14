@@ -21,13 +21,22 @@ class GoogleBook {
     thumbnailLink = validateThumbnail(map);
   }
 
-  validateTitle(Map<String, dynamic> map) => map["volumeInfo"]["title"] ?? "Título não identificado";
-  
-  validateAuthor(Map<String, dynamic> map) => map["volumeInfo"]["authors"] == null ? "Autor não identificado" : (map["volumeInfo"]["authors"] as List<dynamic>).map((e) => e).toString();
+  validateTitle(Map<String, dynamic> map) =>
+      map["volumeInfo"]["title"] ?? "Título não identificado";
 
-  validateDescription(Map<String, dynamic> map) => map["volumeInfo"]["description"] ?? "Sem Descrição";
+  validateAuthor(Map<String, dynamic> map) =>
+      map["volumeInfo"]["authors"] == null
+          ? "Autor não identificado"
+          : (map["volumeInfo"]["authors"] as List<dynamic>)
+              .map((e) => e)
+              .toString();
 
-  validateThumbnail(Map<String, dynamic> map) => map["volumeInfo"]["imageLinks"]?["thumbnail"] ?? "https://placehold.co/200x290?text=Image+not+found";
+  validateDescription(Map<String, dynamic> map) =>
+      map["volumeInfo"]["description"] ?? "Sem Descrição";
+
+  validateThumbnail(Map<String, dynamic> map) =>
+      map["volumeInfo"]["imageLinks"]?["thumbnail"] ??
+      "https://placehold.co/200x290.png";
 
   GoogleBook.fromJson(Map<String, dynamic> map) {
     id = map["id"];
