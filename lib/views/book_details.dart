@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../controller/book_controller.dart';
 import '../models/personal_book.dart';
 
 import '../../theme.dart';
@@ -18,12 +19,17 @@ class BookDetails extends StatefulWidget {
 }
 
 class _BookDetailsState extends State<BookDetails> {
+  final BookController bookController = BookController();
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
         decoration: AppBackgroundProperties.boxDecoration,
         child: Scaffold(
+          appBar: AppBar(
+            backgroundColor: Colors.transparent,
+          ),
           backgroundColor: Colors.transparent,
           body: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 42.0),
@@ -156,18 +162,18 @@ class _BookDetailsState extends State<BookDetails> {
                       icon: Icons.edit,
                       text: "Editar",
                       onTap: () {
-                        // Navigator.push(
-                        //     context,
-                        //     MaterialPageRoute(
-                        //         builder: (context) => EditDetails(
-                        //               book: "book",
-                        //             ))).then((value) {
-                        //   setState(() {
-                        //     if (value != null) {
-                        //       "Update book";
-                        //     }
-                        //   });
-                        // });
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => EditDetails(
+                                      personalBook: widget.personalBook,
+                                    ))).then((value) {
+                          setState(() {
+                            if (value != null) {
+                              widget.personalBook = value;
+                            }
+                          });
+                        });
                       },
                     ),
                   ),
@@ -178,11 +184,12 @@ class _BookDetailsState extends State<BookDetails> {
                       text: "Excluir",
                       onTap: () {
                         // Delete book
-                        // Navigator.pushAndRemoveUntil(
-                        //   context,
-                        //   MaterialPageRoute(builder: (context) => const Home()),
-                        //   (_) => false,
-                        // );
+                        bookController.deleteBook(widget.personalBook);
+                        Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(builder: (context) => const Home()),
+                          (_) => false,
+                        );
                       },
                     ),
                   ),
