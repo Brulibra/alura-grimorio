@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../theme.dart';
+import '../controller/book_controller.dart';
 import 'book_details.dart';
 import 'components/display_text.dart';
 import 'components/floating_button.dart';
@@ -16,6 +17,8 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
+  final BookController bookController = BookController();
+
   @override
   void initState() {
     super.initState();
@@ -29,30 +32,29 @@ class _HomeState extends State<Home> {
       child: Scaffold(
         appBar: AppBar(backgroundColor: AppColors.black),
         backgroundColor: Colors.transparent,
-        body: const Center(
-          child: _EmptyHome(),
+        body: Center(
           // Need connection with sqflite
-          // child: FutureBuilder(
-          //   future: "Future",
-          //   builder: (context, snapshot) {
-          //     switch (snapshot.connectionState) {
-          //       case ConnectionState.none:
-          //         break;
-          //       case ConnectionState.waiting:
-          //         return const CircularProgressIndicator();
-          //       case ConnectionState.active:
-          //         break;
-          //       case ConnectionState.done:
-          //         if (snapshot.hasData && snapshot.data!.isNotEmpty) {
-          //           return _FilledHome(listPersonalBook: snapshot.data!);
-          //         }
-          //         break;
-          //       default:
-          //         break;
-          //     }
-          //     return const _EmptyHome();
-          //   },
-          // ),
+          child: FutureBuilder(
+            future: bookController.getBooks(),
+            builder: (context, snapshot) {
+              switch (snapshot.connectionState) {
+                case ConnectionState.none:
+                  break;
+                case ConnectionState.waiting:
+                  return const CircularProgressIndicator();
+                case ConnectionState.active:
+                  break;
+                case ConnectionState.done:
+                  if (snapshot.hasData && snapshot.data!.isNotEmpty) {
+                    return _FilledHome(listPersonalBook: snapshot.data!);
+                  }
+                  break;
+                default:
+                  break;
+              }
+              return const _EmptyHome();
+            },
+          ),
         ),
       ),
     ));
