@@ -30,10 +30,9 @@ class _HomeState extends State<Home> {
         child: Container(
       decoration: AppBackgroundProperties.boxDecoration,
       child: Scaffold(
-        appBar: AppBar(backgroundColor: AppColors.black),
+// appBar: AppBar(backgroundColor: AppColors.black),
         backgroundColor: Colors.transparent,
         body: Center(
-          // Need connection with sqflite
           child: FutureBuilder(
             future: bookController.getBooks(),
             builder: (context, snapshot) {
@@ -61,7 +60,6 @@ class _HomeState extends State<Home> {
   }
 }
 
-// Filled Home widget
 class _FilledHome extends StatefulWidget {
   _FilledHome({required this.listPersonalBook});
 
@@ -72,7 +70,7 @@ class _FilledHome extends StatefulWidget {
 }
 
 class _FilledHomeState extends State<_FilledHome> {
-  final bookController = BookController();
+  final BookController bookController = BookController();
 
   @override
   Widget build(BuildContext context) {
@@ -107,7 +105,7 @@ class _FilledHomeState extends State<_FilledHome> {
                       ),
                     ).then((value) async {
                       widget.listPersonalBook = await bookController.getBooks();
-                      setState(() {});
+                      setState(() { });
                     });
                   },
                   child: Image.network(
