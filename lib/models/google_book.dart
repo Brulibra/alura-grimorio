@@ -27,7 +27,7 @@ class GoogleBook {
 
   validateDescription(Map<String, dynamic> map) => map["volumeInfo"]["description"] ?? "Sem Descrição";
 
-  validateThumbnail(Map<String, dynamic> map) => map["volumeInfo"]["imageLinks"]?["thumbnail"] ?? "https://placehold.co/300x200?text=Image+not+found";
+  validateThumbnail(Map<String, dynamic> map) => map["volumeInfo"]["imageLinks"]?["thumbnail"] ?? "https://placehold.co/200x290?text=Image+not+found";
 
   GoogleBook.fromJson(Map<String, dynamic> map) {
     id = map["id"];

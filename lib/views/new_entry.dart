@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../models/google_book.dart';
 import 'components/date_input.dart';
 import 'components/display_text.dart';
 import 'components/entry.dart';
@@ -8,7 +9,7 @@ import '../../theme.dart';
 import 'home.dart';
 
 class NewEntry extends StatefulWidget {
-  const NewEntry({super.key,});
+  const NewEntry({super.key, required GoogleBook googleBook,});
 
   @override
   State<NewEntry> createState() => _NewEntryState();
