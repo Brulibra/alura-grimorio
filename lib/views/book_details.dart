@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import '../models/personal_book.dart';
 
 import '../../theme.dart';
-import '../models/google_book.dart';
-import '../models/personal_book.dart';
 import 'components/display_text.dart';
 import 'components/primary_button.dart';
 import 'components/secondary_button.dart';
@@ -10,10 +9,8 @@ import 'edit_details.dart';
 import 'home.dart';
 
 class BookDetails extends StatefulWidget {
-  BookDetails(
-      {super.key, required this.googleBook, required this.personalBook});
+  BookDetails({super.key, required this.personalBook});
 
-  GoogleBook googleBook;
   PersonalBook personalBook;
 
   @override
@@ -34,14 +31,14 @@ class _BookDetailsState extends State<BookDetails> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 24.0),
-                    child: DisplayText(widget.googleBook.description),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 24.0),
+                    child: DisplayText("Detalhes do Livro"),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(bottom: 16.0),
                     child: Image.network(
-                      widget.googleBook.thumbnailLink,
+                      widget.personalBook.googleBook.thumbnailLink,
                       height: 220,
                       width: 144,
                       fit: BoxFit.cover,
@@ -50,7 +47,7 @@ class _BookDetailsState extends State<BookDetails> {
                   Padding(
                     padding: const EdgeInsets.only(bottom: 8.0),
                     child: Text(
-                      widget.googleBook.title,
+                      widget.personalBook.googleBook.title,
                       style: ModalDecorationProperties.bookTitle,
                     ),
                   ),
@@ -59,7 +56,7 @@ class _BookDetailsState extends State<BookDetails> {
                     child: SizedBox(
                       width: double.maxFinite,
                       child: Text(
-                        widget.googleBook.authors,
+                        widget.personalBook.googleBook.authors,
                         style: ModalDecorationProperties.bookAuthor,
                       ),
                     ),
@@ -70,7 +67,7 @@ class _BookDetailsState extends State<BookDetails> {
                       children: [
                         Expanded(
                           child: Text(
-                            widget.googleBook.description,
+                            widget.personalBook.googleBook.description,
                             maxLines: 4,
                             overflow: TextOverflow.ellipsis,
                           ),
@@ -90,7 +87,7 @@ class _BookDetailsState extends State<BookDetails> {
                           ),
                         ),
                         Text(
-                          widget.personalBook.dayStarted,
+                          "Inicio da Leitura",
                           style: TextStyle(color: AppColors.mediumPink),
                         ),
                       ],
@@ -118,7 +115,7 @@ class _BookDetailsState extends State<BookDetails> {
                           ),
                         ),
                         Text(
-                          widget.personalBook.dayStarted,
+                          "Final da Leitura",
                           style: TextStyle(color: AppColors.mediumPink),
                         ),
                       ],
@@ -139,7 +136,7 @@ class _BookDetailsState extends State<BookDetails> {
                     child: Row(
                       children: [
                         Text(
-                          widget.personalBook.comments,
+                          "Comentários",
                           style: TextStyle(color: AppColors.mediumPink),
                         ),
                       ],
